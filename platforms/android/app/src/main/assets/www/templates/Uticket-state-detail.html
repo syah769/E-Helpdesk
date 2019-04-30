@@ -1,0 +1,222 @@
+
+<ion-view cache-view="false" view-title="#TICKET ID : {{details.TIC_ID}}" hide-nav-bar="true">
+
+    
+    <ion-content >
+<br>
+<div class="card">
+  <div class="item item-text-wrap">
+    <span class="bold">Assign to : </span> {{details.TIC_Tech}}  
+  </div>
+  <div class="item item-text-wrap">
+     <span class="bold">Handled by : </span> {{details.Admin_ID}}
+  </div>
+  <div class="item item-text-wrap">
+    <span class="bold">P.I.C Name : </span> {{details.TIC_Pic}}  
+  </div>
+  <div class="item item-text-wrap">
+    <span class="bold">Phone Number: </span> {{details.TIC_Phone}}  
+  </div>
+  <div class="item item-text-wrap">
+    <span class="bold">End User: </span> {{details.TIC_End}}  
+  </div>
+  <div class="item item-text-wrap">
+    <span class="bold">End User Phone Number: </span> {{details.TIC_EndPhone}}  
+  </div>
+ <div class="item item-text-wrap">
+    <span class="bold">Item : </span> {{details.TIC_Subject}}  
+  </div>
+   <div class="item item-text-wrap">
+    <span class="bold">Model : </span> {{details.TIC_Body}}  
+  </div>
+   <div class="item item-text-wrap">
+    <span class="bold">Serial Number : </span> {{details.TIC_Serial}}  
+  </div>
+  <div class="item item-text-wrap">
+      <span class="bold">Problem Description : </span> {{details.TIC_Problem}}
+  </div>
+  <div class="item item-text-wrap">
+    <span class="bold">Company Name : </span> {{details.TIC_Company}}  
+  </div>
+  <div class="item item-text-wrapr">
+     <span class="bold">Date submit : </span> {{details.TIC_Date}}
+  </div>
+ <div class="item item-text-wrap">
+     <span class="bold">Created by : </span> {{details.User_ID}}
+  </div>
+  <div class="item item-text-wrap">
+     <span class="bold">Notes: </span> {{details.TIC_Progress}}
+  </div>
+ 
+
+  
+</div>
+
+<!-- line 27, sy dah try ng-click OnTicketDelete dari codding abg dan modal.show tu. Tak jadi.. Abg boleh rujuk di controller.js , pada line 771 -->
+
+ <div class="row">
+          <div class="col col-50">
+              <div ng-if="paras.state  === 'NEW' "> 
+            <button class="button button-full button-small button-block button-assertive" ng-click="modal.show({{details.TIC_ID}})" style="border-radius: 25px;">EDIT</button>
+           
+
+          </div>
+          </div>
+          
+          <div class="col col-50">
+               <div ng-if="paras.state  === 'NEW' "> 
+            <button class="button button-full button-small button-block button-assertive" ng-click="deleteTicket({{details.TIC_ID}})" style="border-radius: 25px;">DELETE</button>
+            </div> 
+          </div>
+          
+          
+        </div>
+
+
+      
+      
+      
+     
+<div ng-repeat="message in reply" class="message-wrapper">
+      
+                  <div ng-if="message.Type  == 'A' ">
+                      
+                     <img class="profile-pic left" src="{{IP}}{{message.PersonID}}.png">
+      
+                      <div class="chat-bubble left">
+      
+                          <div class="message ng-binding"><pre>{{message.MSG}}</pre>
+                          </div>
+      
+                          <div class="message-detail">
+                              <span class="bold ng-binding">{{message.Name}}</span>, 
+                              <span>{{message.Time}}</span>
+                          </div>
+      
+                      </div>
+                  </div>
+      
+                   <div ng-if="message.Type  === 'B' ">
+                    
+                      <img class="profile-pic right" src="{{IP}}{{message.PersonID}}.png">
+                    
+                      <div class="chat-bubble right">
+      
+                         <div class="message ng-binding"><pre>{{message.MSG}}</pre>
+                          </div>
+      
+                          <div class="message-detail">
+                              <span class="bold ng-binding">{{message.Name}}</span>, 
+                              <span>{{message.Time}}</span>
+                          </div>
+      
+                      </div>
+                    
+                  </div>
+      
+                  <div class="cf"></div>
+      
+</div>
+
+       
+  </ion-content>
+
+
+<!-- Ini script popup untuk function edit ticket. Rujuk controller.js pada line 720 -->
+
+  <script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-assertive">
+          <h1 class="title">Update Ticket {{details.TIC_ID}}</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <form name="alterar" ng-submit="updateTicket()">
+
+            <label class="item item-input item-select">
+              <div class="input-label">
+              Assign to
+              </div>
+              <select ng-model="details.TIC_Tech" >
+              <option>Naim/1001</option>
+              <option selected>Firdaus/1002</option>
+              <option>Hatta/1003</option>
+              <option>Hafiz/1004</option>
+              <option>Amir/1005</option>
+              </select>
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label">Items</span>
+              <input ng-model="details.TIC_Subject" type="text">
+            </label>
+
+
+            <label class="item item-input">
+              <span class="input-label">Model</span>
+              <input ng-model="details.TIC_Body" type="text">
+            </label>
+
+             <label class="item item-input">
+              <span class="input-label">Serial Number</span>
+              <input ng-model="details.TIC_Serial" type="text">
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label">Description</span>
+              <input ng-model="details.TIC_Problem" type="text">
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label">P.I.C</span>
+              <input ng-model="details.TIC_Pic" type="text">
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label">Phone Number</span>
+              <input ng-model="details.TIC_Phone" type="text">
+            </label>
+
+
+             <label class="item item-input">
+              <span class="input-label">Company Name</span>
+              <input ng-model="details.TIC_Company" type="text">
+            </label>
+
+            <label class="item item-input">
+              <span class="input-label">Notes</span>
+              <input ng-model="details.TIC_Progress" type="text">
+            </label>
+
+
+            <button type="submit" class="button button-full button-assertive" ng-disabled="alterar.$invalid">UPDATE</button>
+          </form>
+          </div>
+
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+
+            
+              <ion-footer-bar style="height: 50px;">
+ 
+                    <div ng-if="paras.state  === 'PENDING' "> 
+                        <button class="button button-large button-assertive footerbutt" style="left: 5px;"  ng-click="showReplyPop()">
+                            Update Progress
+                        </button>
+                        <button class="button  button-large button-assertive footerbutt"  style=" right: 5px;"  ng-click="showSolvePop()">
+                            Mark as Solve
+                        </button>    
+ 
+                    </div>         
+              </ion-footer-bar>
+        
+              
+              
+            
+             
+          
+</ion-view>

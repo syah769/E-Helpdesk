@@ -1,0 +1,92 @@
+<ion-view view-title="POST TICKET" hide-nav-bar="true">
+     <ion-content class="padding">
+        <h4 class=""></h4>
+        
+    <div class="list card">
+            <div class="list">
+
+
+                  <label class="item item-input item-select">
+                     <div class="input-label">
+                     <b>Assign to</b>
+                     </div>
+                     <select ng-model="data.technician" >
+                     <option>Naim/1001</option>
+                     <option selected>Firdaus/1002</option>
+                     <option>Hatta/1003</option>
+                     <option>Hafiz/1004</option>
+                     <option>Amir/1005</option>
+                     </select>
+                  </label>
+
+                   <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>P.I.C Name</b></span>
+                  <input type="text" placeholder="Detailed information here" ng-model="data.pic">
+                  </label>
+
+                   <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>Phone Number</b></span>
+                  <input type="text" placeholder="Phone" ng-model="data.phone">
+                  </label>
+
+                   <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>End Userr</b></span>
+                  <input type="text" placeholder="Phone" ng-model="data.end">
+                  </label>
+
+                   <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>End User Phone Number</b></span>
+                  <input type="text" placeholder="Phone" ng-model="data.endphone">
+                  </label>
+
+
+
+                   <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Item</b></span>
+                    <input type="text" required placeholder="Item" ng-model="data.subject">
+                  </label>
+
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Model</b></span>
+                    <input type="text" required placeholder="Model" ng-model="data.body">
+                  </label>
+
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Serial Number</b></span>
+                    <input type="text" required placeholder="Serial Number" ng-model="data.serial">
+                  </label>
+
+              
+
+                   <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Problem description</b></span>
+                    <textarea rows="10" placeholder="Problem" ng-model="data.problem"></textarea>
+                  </label>
+                  
+      
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>Company Name</b></span>
+                  <input type="text" placeholder="Name of company" ng-model="data.company">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                  <span class="input-label"><b>Notes</b></span>
+                  <input type="text" placeholder="Notes" ng-model="data.progress">
+                </label>
+
+                
+       
+
+            </div>
+        </div>
+        
+              
+            <button class="button button-full button-assertive"  ng-click="submitTicket()" style="border-radius: 25px;">
+            Submit
+          </button>
+       
+      </ion-content>
+</ion-view>
+
+

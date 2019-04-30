@@ -1,0 +1,45 @@
+<ion-view  cache-view="false" view-title="Ticket" hide-nav-bar="true" >
+  <ion-content has-bouncing="false">
+
+    <img src="img/header.jpg" class="full-image">
+
+    <ion-refresher on-refresh="Refresh()"></ion-refresher>  <!-- ini untuk reload page -->
+    
+<div class="">
+      
+              <a class="item item-avatar item-icon-right" href="#/tabSuper/Superticket/NEW" >
+                 <img src="img/new.png" class="menu_home_image">
+                <h2>New Ticket</h2>
+                <p>List of new tickets</p>
+                <span class="badge badge-assertive">{{count.new}}</span>
+              </a>
+
+             
+
+                <a class="item item-avatar item-icon-right" href="#/tabSuper/Superticket/ALL-PENDING">
+                    <img src="img/overall.png" class="menu_home_image">
+                    <h2>Overall Pending Ticket</h2>
+                    <p>List of overall pending tickets</p>
+                    <span class="badge badge-assertive">{{count.opending}}</span>
+                </a>
+      
+          
+
+               <a class="item item-avatar item-icon-right" href="#/tabSuper/Superticket/SOLVED">
+                <img src="img/solve.png" class="menu_home_image">
+                <h2>Solved Ticket</h2>
+                 <p>List of tickets that have been solved</p>
+                <span class="badge badge-assertive">{{count.solved}}</span>
+              </a>
+  </div>
+
+<br>
+
+<button class="button button-full button-assertive"  style="border-radius: 25px" onclick="window.open('http://helpdesk.io.mecacomtech.com/display/', '_system', 'location=yes'); return false;" >
+   DOWNLOAD AS EXCEL
+</button> 
+
+
+
+  </ion-content>
+</ion-view>

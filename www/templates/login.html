@@ -1,0 +1,52 @@
+<ion-view cache-view="false" view-title="Mecacom Helpdesk" hide-nav-bar="true" class="signup_page"  name="login-view" hide-tabs >
+  <ion-content class="padding">
+      
+      <img class="avatar" src="img/help.png">
+
+      <div class="text">
+<h4>MECA DESK</h4>
+</div>
+      
+      <div class="list list-inset">
+          
+         <label class="item-input">
+          <i class="icon ion-person"></i>
+                        <input type="text" placeholder="Username" required ng-model="data.username"/>
+                        </label>
+
+    
+          
+            
+               
+             <label class="item-input">
+                  <i class="icon ion-locked"></i>
+              <input type="password" placeholder="Password" required  ng-model="data.password" />
+               </label>
+          
+      </div>
+      
+      
+
+
+      <div>
+          <select ng-model="data.access" >
+                  <option value="USER" >ADMIN</option>
+                  <option value="ADMIN" >ENGINEER TECH</option>
+                  <option value="SUPER" >SUPER USER</option>
+                </select>
+      </div>  
+      
+      <button class="button  button-block button-assertive" ng-disabled="Form.$invalid" ng-click="logins()" style="border-radius: 25px;" >
+          <i class="icon ion-log-in" ></i>
+          LOGIN
+          </button>
+      
+    
+
+     
+
+     <br><br><br><br>
+      
+     
+  </ion-content>
+</ion-view>

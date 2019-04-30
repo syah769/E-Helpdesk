@@ -1,0 +1,33 @@
+<ion-view view-title="EDIT TICKET UNTUK ADMIN">
+     <ion-content class="padding">
+        <h4 class="content padding double-padding-x"></h4>
+         <center><h4 class="content padding double-padding-x">Edit Ticket</h4></center>
+    <div class="list card">
+            <div class="list">
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label"><b>Subject</b></span>
+                    <input type="text" required placeholder="Kat sini kita akan tarik balik id pasal subject tiket tu" ng-model="data.subject">
+                  </label>
+                  
+                 
+                
+                  <label class="item item-input item-stacked-label">
+                       <span class="input-label"><b>Content</b></span>
+                <textarea rows="10" placeholder="Kat sini kita akan tarik balik id pasal content tu" ng-model="data.body"></textarea>
+                </label>
+                
+       
+
+            </div>
+        </div>
+        
+        
+    
+                
+            
+                 
+                         <div class="padding">
+               <button class="button button-full button-calm ink"  ng-click="editTicket()">Update</button>
+        </div>
+      </ion-content>
+</ion-view>

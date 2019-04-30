@@ -1,0 +1,35 @@
+<ion-view view-title="" cache-view="false" hide-nav-bar="true">
+  <ion-content has-bouncing="false">
+     <img src="img/header.jpg" class="full-image">
+      <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+      
+      
+      <ion-list>
+
+      
+<div class="item">
+   <img class="avatar" ng-src="{{IP}}{{image}}" src="{{IP}}{{image}}">
+    <center>
+        <i class="icon ion-person-stalker"  style="font-size: 30px;"></i>
+        <b style="font-size: 25px;"> {{details.NICK}}</b><br>
+        <span style="font-size: 20px;"> {{details.STATUS}}</span><br>
+    </center> 
+</div>
+
+
+
+
+        
+
+        
+<button class="button button-full button-assertive" ng-click="LogOut()" style="border-radius: 25px;">
+   LOG OUT
+</button> 
+
+ 
+    </ion-list>
+  </ion-content>
+</ion-view>

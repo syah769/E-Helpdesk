@@ -1,0 +1,43 @@
+<ion-view  cache-view="false" view-title="" >
+  <ion-content has-bouncing="false">
+
+    <img src="img/header.jpg" class="full-image">
+
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="Refresh()">
+  </ion-refresher>  <!-- ini untuk reload page -->
+
+ <div class="padding">
+      
+      <a class="item item-avatar item-icon-right" href="#/tabU/Uticket/NEW" style="padding-left: 82px;">
+          <img src="img/new.png" class="menu_home_image">
+          <h2>New Ticket</h2>
+          <p>New Ticket</p>
+          <span class="badge badge-assertive">{{count.new}}</span>
+      </a>
+      
+
+          
+          <a class="item item-avatar item-icon-right" href="#/tabU/Uticket/ALL-PENDING" style="padding-left: 82px;">
+             <img src="img/overall.png" class="menu_home_image">
+              <h2>Overall Pending Ticket</h2>
+              <p>List of overall pending tickets</p>
+              <span class="badge badge-assertive">{{count.opending}}</span>
+          </a>
+      
+          <a class="item item-avatar item-icon-right" href="#/tabU/Uticket/SOLVED" style="padding-left: 82px;">
+            <img src="img/solve.png" class="menu_home_image">
+            <h2>Solved Ticket</h2>
+            <p>List of tickets that have been solved</p>
+            <span class="badge badge-assertive">{{count.solved}}</span>
+          </a>
+      
+          <button class="button button-full button-assertive"  ui-sref="tabU.NewTicket" style="border-radius: 25px;">
+                Create New Ticket
+              </button>  
+
+     </div>
+
+  </ion-content>
+</ion-view>
